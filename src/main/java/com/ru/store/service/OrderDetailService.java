@@ -24,8 +24,7 @@ public class OrderDetailService {
     }
 
     public void createOrderDetail(OrderDetail newOrderDetail) {
-        ArrayList <OrderDetail>  orderDetailArrayList = (ArrayList<OrderDetail>) orderDetailRepository.findAll();
-        if(orderDetailArrayList.size() < newOrderDetail.getId()) {
+        if(orderDetailRepository.findAll().size() < newOrderDetail.getId()) {
             OrderDetail orderDetail = newOrderDetail;
             Product product = productRepository.findById(newOrderDetail.getProduct().getId()).get();
             orderDetail.setPrice(product.getPrice());

@@ -4,8 +4,6 @@ package com.ru.store.service;
 import com.ru.store.model.Orders;
 import com.ru.store.repository.OrdersRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -17,8 +15,7 @@ public class OrdersService {
     }
 
     public void createNewOrder(Orders newOrders){
-        ArrayList<Orders> ordersArrayList = (ArrayList<Orders>) ordersRepository.findAll();
-        if(ordersArrayList.size() < newOrders.getId()){
+        if(ordersRepository.findAll().size() < newOrders.getId()){
             ordersRepository.save(newOrders);
         } else
             System.out.println("Такой уже создан");
