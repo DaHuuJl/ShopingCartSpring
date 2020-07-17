@@ -6,9 +6,9 @@ INSERT INTO product VALUES
 (5,'Сливочное масло', false, 'Лебедянь', 27599.99);
 
 INSERT INTO customer VALUES
-(1,'г.Сокол','vasilisk@mail.ru','Атонов','89305552215'),
-(2,'г.Орёл','ubitsa@gmail.com','Семенов','89223779598'),
-(3,'г.Воронеж','julia@yandex.ru','Алексеенко','88005553535');
+(1,'г. Сокол','vasilisk@mail.ru','Атонов','89305552215'),
+(2,'г. Орёл','ubitsa@gmail.com','Семенов','89223779598'),
+(3,'г. Воронеж','julia@yandex.ru','Алексеенко','88005553535');
 
 INSERT INTO orders VALUES
 (1,'2020-09-23', 'CREATED', 'CREDIT_CARD', 2),

@@ -24,10 +24,14 @@ public class OrderDetailService {
     }
 
     public void createOrderDetail(OrderDetail newOrderDetail) {
-        OrderDetail orderDetail = newOrderDetail;
-        Product product = productRepository.findById(newOrderDetail.getProduct().getId()).get();
-        orderDetail.setPrice(product.getPrice());
-        orderDetailRepository.save(orderDetail);
+        ArrayList <OrderDetail>  orderDetailArrayList = (ArrayList<OrderDetail>) orderDetailRepository.findAll();
+        if(orderDetailArrayList.size() < newOrderDetail.getId()) {
+            OrderDetail orderDetail = newOrderDetail;
+            Product product = productRepository.findById(newOrderDetail.getProduct().getId()).get();
+            orderDetail.setPrice(product.getPrice());
+            orderDetailRepository.save(orderDetail);
+        } else
+            System.out.println("Такой уже создан");
     }
 
     public void deleteOrderDetail(Long orderDetailId) {
